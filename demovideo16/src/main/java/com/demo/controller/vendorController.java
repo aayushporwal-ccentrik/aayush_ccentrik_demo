@@ -35,7 +35,7 @@ public class vendorController {
 	        return vo.getSingleVendor(id);
 		}
 
-		@PostMapping("/vendor")
+		@PostMapping("/vendors")
 	    public Vendor createNewVendor(@RequestBody Vendor payload) throws SQLException {
 	        return vo.createVendor(payload);
 	    }

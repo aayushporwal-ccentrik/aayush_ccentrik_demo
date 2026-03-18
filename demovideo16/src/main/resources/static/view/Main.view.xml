@@ -1,0 +1,130 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:t="sap.ui.table"
+          xmlns:f="sap.ui.layout.form"
+          xmlns:l="sap.ui.layout"
+          xmlns:core="sap.ui.core"
+          controllerName="aayush.controller.Main">
+
+    <Page title="Vendor Data!">
+        <Button text="Load Data" press="onLoadData"/>
+
+        <f:SimpleForm id="SimpleFormChange354wide"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            title="Address"
+            labelSpanXL="4"
+            labelSpanL="3"
+            labelSpanM="4"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="4"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false">
+
+            <f:content>
+                <Label text="Id" />
+                <Input value="{/postPayload/id}" />
+
+                <Label text="Company Name" />
+                <Input value="{/postPayload/companyName}" />
+
+                <Label text="First Name / Last Name" />
+                <Input value="{/postPayload/firstName}" />
+                <Input value="{/postPayload/lastName}">
+                    <layoutData>
+                        <l:GridData span="XL1 L2 M2 S4" />
+                    </layoutData>
+                </Input>
+
+                <Label text="Email" />
+                <Input value="{/postPayload/email}">
+                    <layoutData>
+                        <l:GridData span="XL1 L2 M2 S4" />
+                    </layoutData>
+                </Input>
+
+                <Label text="Website" />
+                <Input value="{/postPayload/website}" />
+
+                <Label text="GST No" />
+                <Input value="{/postPayload/gstNumber}" />
+            </f:content>
+        </f:SimpleForm>
+
+        <t:Table id="idTable" selectionMode="MultiToggle" selectionBehavior="Row">
+            <t:columns>
+
+        <t:Column>
+            <Label text="ID"/>
+            <t:template>
+                <Text text="{id}"/>
+            </t:template>
+        </t:Column>
+
+        <t:Column>
+            <Label text="First Name"/>
+            <t:template>
+                <Text text="{firstName}"/>
+            </t:template>
+        </t:Column>
+
+        <t:Column>
+            <Label text="Last Name"/>
+            <t:template>
+                <Text text="{lastName}"/>
+            </t:template>
+        </t:Column>
+
+        <t:Column>
+            <Label text="Email"/>
+            <t:template>
+                <Text text="{email}"/>
+            </t:template>
+        </t:Column>
+
+        <t:Column>
+            <Label text="Company"/>
+            <t:template>
+                <Text text="{companyName}"/>
+            </t:template>
+        </t:Column>
+
+        <t:Column>
+            <Label text="Website"/>
+            <t:template>
+                <Text text="{website}"/>
+            </t:template>
+        </t:Column>
+
+        <t:Column>
+            <Label text="GST Number"/>
+            <t:template>
+                <Text text="{gstNumber}"/>
+            </t:template>
+        </t:Column>
+
+        <t:Column>
+            <Label text="Status"/>
+            <t:template>
+                <Text text="{vstatus}"/>
+            </t:template>
+        </t:Column>
+
+    </t:columns>
+        </t:Table>
+
+        <footer>
+            <Toolbar>
+                <Button text="Save" press="onSave"/>
+
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>
